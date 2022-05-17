@@ -1,12 +1,12 @@
-# Projet de session - Été 2021
+# Projet de session - Été 2022
 
 **Objectifs** : Introduire l’étudiant à la conception de programmes orientés objet en faisant des choix par rapport aux différents concepts vus dans ce cours. 
 
 **Durée** : Presque toute la session.
 
 **Livrables** : <br>
-1. Évaluation 1 : Le 1er juin à 18h (créneau de rendez-vous pour chaque équipe)
-1. Évaluation finale : Le 17 juin à 18h (créneau de rendez-vous pour chaque équipe)
+1. Évaluation 1 : Remise le 1er juin à 23h59 + Évaluation le 2 juin (créneau de rendez-vous pour chaque équipe)
+1. Évaluation finale : Remise le 15 juin à 23h59 + Évaluation le 16 juin (créneau de rendez-vous pour chaque équipe)
 
 
 ## Directives particulières
