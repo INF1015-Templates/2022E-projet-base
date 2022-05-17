@@ -58,26 +58,21 @@ Dans le cadre du livrable 1, on veut une commande qui permet de réafficher le n
 
 <img src="doc/assets/screenshot_basic_commands.png">
 
-Remarquez qu'on donne, dans la liste des cases connexes à la case actuelle, la commande de navigation entre parenthèses. C'est une bonne idée pour aider le joueur à ne pas trop se casser la tête. Il serait encore mieux d'accepter comme commande de navigation à la fois la lettre et le nom de la direction (donc *N* ou *north* pour aller au nord).
-
-Préférablement, l'utilisateur devrait être capable d'entrer toutes les commandes sans se soucier des minuscules ou majuscules ou des espaces superflues. Les fonctions d'algorithmes sur les chaines de caractères de boost telles que [trim_copy](https://www.boost.org/doc/libs/1_76_0/doc/html/boost/algorithm/trim_copy.html), [to_lower_copy](https://www.boost.org/doc/libs/1_76_0/doc/html/boost/algorithm/to_lower_copy.html) et [iequals](https://www.boost.org/doc/libs/1_76_0/doc/html/boost/algorithm/iequals.html) pourraient vous être très utiles dans la manipulation des string. C'est définitivement plus simple que d'écrire vous-même ces fonctions.
-
+Remarquez qu'on donne, dans la liste des cases connexes à la case actuelle, la commande de navigation entre parenthèses. C'est une bonne idée pour guider le joueur dans le jeu. Les commandes à la lettre ou encore avec le nom de la direction (donc *N* ou *north* pour aller au nord) devraient être acceptés comme commande de navigation.
 
 ## Description du livrable 1
-
-### Exécution
 
 Vous devez implémenter toutes les fonctionnalités présentées dans la description du projet ci-dessus et avoir une version fonctionnelle de votre jeu dans lequel on peut naviguer à travers la carte du monde. Vous devriez avoir au moins 5 cases dans votre carte, dont une qui est connectée à plusieurs cases à la fois, et votre monde devrait avoir une case de départ prédéterminée. Il devrait être possible d'avoir une boucle dans la carte. Vous n'êtes pas obligés d'avoir exactement les mêmes noms de commandes que dans l'exemple précédent, mais vous devez avoir les mêmes commandes et donner du feedback au joueur par rapport aux commandes qu'il entre.
 
 ### Conception
 
-Vous devez concevoir la structure et le contenu de votre code selon une formule orientée-objet propre et facile à lire. Il doit vous être facile d'expliquer et de justifier vos choix spécifiques durant l'évaluation. Ci-dessous se trouvent quelques points nécessaires à prendre en compte dans votre code. Ce ne sont bien sûr pas les seuls, mais ce sont définitivement les plus importants et un point de départ. Vous devez aussi respecter le guide de codage des TD et tout ce que ça implique.
+Vous devez concevoir la structure et le contenu de votre code selon une formule orientée-objet propre et facile à lire. Il vous sera demandé d'expliquer et de justifier brièvement vos choix spécifiques durant l'évaluation. Ci-dessous se trouvent quelques points nécessaires à prendre en compte dans votre code. Vous devez aussi respecter le guide de codage des TD et tout ce que ça implique.
 
 #### Gestion de mémoire, de construction et de destruction propre et efficace
 
-Assurez-vous que la possession et la responsabilité de la gestion des ressources sont claires dans vos classes. Vous devriez être facilement dire qui possède quoi dans votre code (quelle classe est responsable de telle ou telle ressource).
+Assurez-vous que la possession et la responsabilité de la gestion des ressources sont claires dans vos classes.
 
-Vous devez utiliser de la mémoire allouée dynamiquement pour éviter les copies profondes là où c'est préférable. Il ne doit y avoir aucune fuite de mémoire. Vous avez appris à vous servir des pointeurs intelligents et des vecteurs, donc servez-vous-en. En gros, on ne veut aucun `new` et `delete` (ou encore pire `malloc()` et `free()`) écrits à la main dans votre code.
+Vous devez utiliser de la mémoire allouée dynamiquement pour éviter les copies profondes là où c'est préférable. Il ne doit y avoir aucune fuite de mémoire. Vous avez appris à vous servir des pointeurs intelligents et des vecteurs, donc servez-vous-en. Aucun `new` et `delete` ne devrait être écrit à la main dans votre code.
 
 #### Fonctionnalités bien regroupées dans des classes et fichiers différents
 
@@ -89,13 +84,11 @@ L'état du jeu, qui est pour l'instant pas mal seulement la case dans laquelle s
 
 Pour éviter le code spaghetti et l'interdépendance inutile entre les éléments du programme, il devrait y avoir une séparation très claire et facilement identifiable entre les classes qui gèrent le contenu du monde et celles qui gèrent la logique et l'état du jeu et l'interaction avec le joueur. Par contenu du monde, on veut dire les cases, les connexions entre les cases, la case de départ et la carte du monde en général. Par logique de jeu, on parle du *gameplay* en soi, comme le formatage des affichages, l'analyse des commandes du joueur et la logique appliquée pour faire progresser le jeu.
 
-Imaginez que vous devez programmer un jeu de combat de *Pokémon* en ligne de commande. Vous aurez probablement des classes qui représentent les Pokémon eux-mêmes, avec leurs attributs (*stats*) et leurs descriptions. Vous aurez d'autres classes représentant les attaques et les items utilisables par les Pokémon. Tout ça représenterait le contenu du jeu, plus ou moins indépendamment du flot d'exécution du jeu lui-même. Par-dessus cela, vous auriez toutes les classes qui gèrent les éléments de *gameplay* concrets, tels que l'affichage des HP des Pokémons et des attaques disponibles, le formatage des messages et la façon de sélectionner une attaque à prendre. On ne voudrait pas que ce soit fait directement dans les classes de Pokémon (avec des `cin` et des `cout` directement à l'intérieur). En effet, on voudrait pouvoir changer facilement l'affichage, ou même passer à une interface graphique avec des boutons, sans avoir à toucher aux classes qui dictent quels Pokémon peuvent prendre quelles attaques, par exemple.
-
 Ceci étant dit, pour garder le code du projet d'une taille raisonnable, vous pouvez mettre directement dans votre code source les données des cases et des connexions plutôt que de les charger à partir d'un fichier. Cette partie de données *hard-codées* doit toutefois être assez bien isolée dans ses propres méthodes des classes de gestion de l'exécution du jeu.
 
 #### Éviter la répétition et le code superflu, prioriser l'encapsulation
 
 Votre code devrait être facile à utiliser et ne pas contenir trop de code superflu. Il devrait être facile de modifier certaines fonctionnalités spécifiques sans avoir à toucher à toutes les classes du projet. Les opérations devraient être faciles à faire. Par exemple, créer une nouvelle connexion entre deux cases devrait se faire en l'appel d'une ou deux méthodes.
 
-Durant l'évaluation, si on vous demande de créer une nouvelle case avec un nom et une description donnée, puis de la connecter à une autre case existante, vous devriez être capable de le faire en faisant à peine quelques simples appels de méthodes et sans faire de copier-coller inutile. Changer la case de départ de votre carte devrait pouvoir se faire en une ou deux lignes de code.
+Changer la case de départ de votre carte devrait pouvoir se faire en une ou deux lignes de code.
 
