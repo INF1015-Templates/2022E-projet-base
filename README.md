@@ -80,7 +80,7 @@ Les éléments importants de conception du livrable 1 s'appliquent tous aussi au
 ### **Orienté objet et héritage pour réduire les if/else/switch/case**
 On vous demande aussi maintenant d'avoir différents types d'objets interactifs dans les zones.  Ils ont en commun le fait qu'ils ont un nom et une description et une action à appliquer. Le nom est affiché quand on liste les objets d'une zone et la description est donnée quand on observe l'objet (commande look). L'action est déclenchée par la commande use et l'effet dépend du type de l'objet.  Le code de l'action devrait être associé au type d'objet (ou à l'objet lui-même), pas être dans une séries de if/else pour déterminer quoi appliquer pour l'objet.
 
-#### Déverrouillage de nouvelles zones
+### Déverrouillage de nouvelles zones
 
 Quand vous déverrouillez une nouvelle zone en utilisant un objet, ça devrait seulement créer une nouvelle connexion, pas une nouvelle zone en soi. La zone cachée devrait être déjà créée comme les autres zones et présente dans la carte du jeu, mais elle est seulement inaccessible avant d'utiliser l'objet approprié.
 
