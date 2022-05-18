@@ -65,7 +65,7 @@ Les mêmes règles de recherches s'appliquent pour `use` et pour `look`. Si on f
 ### Affichage de la liste des commandes et fermeture du jeu
 Nous voulons d'abord une commande `exit` qui permet de quitter le jeu en affichant un message quelconque.
 
-Une commande `help` pouvoir afficher la liste des commandes disponibles avec une courte description de ce qu'elles font.
+Nous voulons aussi une commande `help` pour pouvoir afficher la liste des commandes disponibles avec une courte description de ce qu'elles font.
 
 Certaines commandes peuvent être activées par différentes chaînes de caractères (par exemple north ou N pour aller au nord), il faut donc accepter des synonymes pour chaque commande et ceux-ci doivent être listés dans l'affichage.
 
