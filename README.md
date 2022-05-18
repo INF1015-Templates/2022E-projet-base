@@ -86,6 +86,6 @@ On vous demande aussi maintenant d'avoir différents types d'objets interactifs 
 
 Quand vous déverrouillez une nouvelle zone en utilisant un objet, ça devrait seulement créer une nouvelle connexion, pas une nouvelle zone en soi. La zone cachée devrait être déjà créée comme les autres zones et présente dans la carte du jeu, mais elle est seulement inaccessible avant d'utiliser l'objet approprié.
 
-Durant l'évaluation, on vous demandera de créer une zone et de la connecter à une des zones cachées (par exemple avoir une *Salle R2* à l'est de la *Salle R*). 
+Durant l'évaluation, on vous demandera de créer une zone et de la connecter à une des zones existantes.
 
 
