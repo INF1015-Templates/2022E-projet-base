@@ -52,6 +52,8 @@ En interagissant avec certains objets, on veut pouvoir déverrouiller de nouvell
 ### Objets montrant des nouveaux objets
 Comme pour ajouter l'accès à une zone (ci-dessus), interagir avec un objet pourrait montrer un objet qui n'était pas avant visible. Attention qu'interagir plusieurs fois ne devrait pas ajouter plusieurs fois l'objet. Noter que ceci n'est qu'un exemple, où le piano est modifié par rapport à l'exemple précédent: il y a un effet lorsqu'on l'utilise et un message différent à ce moment.
 
+<img src="doc/assets/screenshot_new_item_discovered.png">
+
 ### Traitement des commandes d'objets
 
 Les commandes `look` et `use` permettent d'interagir avec des objets. Il faut toutefois spécifier quel objet on veut regarder ou utiliser. On veut que la commande soit suivie d'une chaîne de caractère (possiblement avec des espaces) qui contient comme sous chaîne un des mots importants associés à l'objet. Par exemple, l'objet avec le nom `A black leather jacket` pourrait être observé en faisant `look black leather jacket`, ou en faisant `look jacket`, car `black leather jacket` et `jacket` sont toutes deux des sous chaînes de `A black leather jacket`. Si plusieurs objets respectent le critère de recherche, on prend le premier trouvé.
