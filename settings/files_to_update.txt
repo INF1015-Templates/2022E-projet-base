@@ -13,3 +13,4 @@ doc/assets/screenshot_item_use_look_argument.png
 doc/assets/screenshot_item_use_look.png
 doc/assets/screenshot_title_first_cell.png
 doc/assets/screenshot_unlock_hidden_room.png
+doc/assets/screenshot_new_item_discovered.png
